@@ -11,13 +11,13 @@ cd /tmp && yt-dlp --skip-download --write-subs --sub-format vtt --convert-subs s
 3. Read the .srt file to extract all Norwegian subtitle lines.
 4. Translate all the subtitles to English.
 5. Display each sentence both in Norwegian and English. Line by line, one line in Norwegian and one line in English.
-6. Read /Users/shuangwu/AItools/LearnNorsk/vocabulary.txt to get the list of already-known words.
+6. Read /Users/shuangwu/Claude-Norsk-Learning/vocabulary.txt to get the list of already-known words.
 7. Identify new vocabulary from the subtitles (notable words/phrases worth learning). Exclude any words already present in vocabulary.txt. Display only the new words at the end.
 8. Save a transcript file to /Users/shuangwu/AItools/LearnNorsk/<episode-title>.txt with:
    - The episode title as a heading
    - Every Norwegian sentence in **bold**, followed by its English translation on the next line
    - A "New Words" section at the end listing: **norsk ord** — English meaning
-9. Append the new words to /Users/shuangwu/AItools/LearnNorsk/vocabulary.txt in the format:
+9. Append the new words to /Users/shuangwu/Claude-Norsk-Learning/vocabulary.txt in the format:
    norsk ord | English meaning
    (one word/phrase per line)
 
@@ -71,7 +71,7 @@ The user can also enter this mode at any time by saying "sentence by sentence" o
 ### How it works
 
 1. Read the transcript .txt file from /Users/shuangwu/AItools/LearnNorsk/. Each bold Norwegian line followed by its English translation is one sentence pair.
-2. Read /Users/shuangwu/AItools/LearnNorsk/vocabulary.txt to know which words the user already knows.
+2. Read /Users/shuangwu/Claude-Norsk-Learning/vocabulary.txt to know which words the user already knows.
 3. Start from the first Norwegian sentence. For each sentence:
    a. Show the **Norwegian sentence** (in bold) AND its English translation together.
    b. Below it, list any words/phrases in that sentence that are NOT in vocabulary.txt, with their English meaning. Format: `- **word** — meaning`
@@ -81,7 +81,7 @@ The user can also enter this mode at any time by saying "sentence by sentence" o
 
 ### Vocabulary from questions
 
-When the user asks about a word during the session (e.g. "hva betyr X?"), after explaining the word, also append it to /Users/shuangwu/AItools/LearnNorsk/vocabulary.txt in the standard format:
+When the user asks about a word during the session (e.g. "hva betyr X?"), after explaining the word, also append it to /Users/shuangwu/Claude-Norsk-Learning/vocabulary.txt in the standard format:
    word | English meaning
 This way, words the user actively asks about are captured as learned vocabulary.
 
@@ -99,7 +99,7 @@ sentence" (or a close variant). No video is involved. Handle each sentence like 
 1. **Translate** the sentence to English. Show it as:
    - **Norwegian sentence** (bold)
    - English translation on the next line
-2. **Read** /Users/shuangwu/AItools/LearnNorsk/vocabulary.txt to see which words the
+2. **Read** /Users/shuangwu/Claude-Norsk-Learning/vocabulary.txt to see which words the
    user already knows.
 3. **Identify new words** — any word or phrase in the sentence that is NOT already in
    vocabulary.txt and is worth learning. List them as: `- **ord** — English meaning`
@@ -107,7 +107,7 @@ sentence" (or a close variant). No video is involved. Handle each sentence like 
    If every word is already known, say so — that is a win worth pointing out.
    Add a short grammar or usage note when the sentence contains something notable
    (word order, a separable verb, a fixed expression, a tricky preposition).
-4. **Append the new words** to /Users/shuangwu/AItools/LearnNorsk/vocabulary.txt in the
+4. **Append the new words** to /Users/shuangwu/Claude-Norsk-Learning/vocabulary.txt in the
    standard format, one per line:
    ord | English meaning
 5. **Record the sentence** in a sentence log file in this repo (see below).
